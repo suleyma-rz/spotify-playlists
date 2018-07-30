@@ -5,11 +5,12 @@ class PlaylistItem extends Component{
         return(
             <div className="playlistItem"  style={{width:'25%', display:'inline-block', color:'white'}}>
                 <img/>
-                <h3>Playlist Name</h3>
+                <h3>{this.props.info.name}</h3>
                 <ul>
-                    <li>Song 1</li>
-                    <li>Song 2</li>
-                    <li>Song 3</li>
+                    {this.props.info.songs.map(song=>
+                        <li key={song.title}>{song.title} - {song.artist}</li>
+                    )
+                    }                    
                 </ul>
             </div>
         );

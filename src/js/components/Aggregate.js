@@ -4,7 +4,7 @@ class Aggregate extends Component{
   render(){
     return(
       <div>
-        <h2 style={{color:'#1db954'}}>Number Text</h2>
+        <h2 style={{color:'#1db954'}}> {this.props.playlists && this.props.playlists.length} Playlists</h2>
       </div>
     )
   }  
