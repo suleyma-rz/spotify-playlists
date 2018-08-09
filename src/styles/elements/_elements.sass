@@ -14,3 +14,55 @@ input
     background-color: $blackish
     border: 2px solid $gray-dark   
     color: $white-medium
+
+
+$checkbox-width:      22px
+
+input[type=checkbox]
+  position: absolute
+  left: -9999px
+
+  &+ label
+    position: relative
+    display: block
+    padding: 6px 10px 6px ($checkbox-width + 10)
+    cursor: pointer
+
+
+    // Checkbox setup
+    &:before
+      display: block
+      content: ""
+      position: absolute
+      left: 0
+      top: 50%      
+      width: $checkbox-width
+      height: $checkbox-width      
+      background-image: url(../assets/checkbox-unchecked.png)
+      background-repeat: no-repeat
+      background-size: cover
+      transform: translate(0%,-50%)
+      //@include background-size(72px)
+    
+  
+
+  // Disabled
+  &:disabled
+    &+ label
+      cursor: not-allowed
+
+      &:before
+        background-position: (-$checkbox-width*2) 0
+
+    // Disabled checked
+    &:checked + label
+      &:before
+        background-position: (-$checkbox-width*3) 0
+
+  // Checked
+  &:checked + label
+    &:before
+      //background-position: -$checkbox-width 0
+      background-image: url(../assets/checkbox-checked.png)
+      background-repeat: no-repeat
+    

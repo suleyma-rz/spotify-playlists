@@ -9,7 +9,7 @@ class Filter extends Component{
         return(
             <div className="filterComponent">
                 <input type="text" placeholder="Search..." onKeyUp={event =>this.props.onTextChange(event.target.value)}/>
-                <button className="btn">Search</button>
+                
             </div>
         )        
     }

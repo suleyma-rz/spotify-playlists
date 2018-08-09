@@ -10,7 +10,7 @@ class Aggregate extends Component{
       },0);
     return(
       <div>
-        <h2 style={{color:'#1db954'}}> {Math.round(totalDuration/60)} minutes </h2>
+        <p> {Math.round(totalDuration/60)} minutes </p>
       </div>
     )
   }  

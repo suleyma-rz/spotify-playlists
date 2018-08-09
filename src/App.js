@@ -5,6 +5,7 @@ import './styles/app.sass';
 
 import Aggregate from './js/components/Aggregate';
 import TimeCounter from './js/components/TimeCounter';
+import InputComponent from './js/components/InputComponent';
 import Filter from './js/components/Filter';
 import PlaylistItem from './js/components/PlaylistItem';
 
@@ -99,24 +100,33 @@ class App extends Component {
       playlist.name.toLowerCase().includes(this.state.filterString.toLowerCase())
     ) : [];
     return (
-      <div className="App">
+      <div className="App">            
       { this.state.serverDataSample.user ?
         <div>
           <h1 style={{color:'white'}}>
             {this.state.serverDataSample.user.name}'s Playlists
-          </h1>                           
-          <Aggregate playlists={playlistsToRender}/>
-          <TimeCounter playlists={playlistsToRender}/>
-          
-          <Filter onTextChange={text=>this.setState({filterString:text})}/>
+          </h1>                                     
 
-          <div className="playlistsContent">
-          {        
-          playlistsToRender.map(playlist=>
-            <PlaylistItem key={playlist.name} info={playlist}/>            
-          )
-          }  
-          </div>              
+          <div>
+
+          </div>
+          <div className="cols col-50">
+            <InputComponent/>
+          </div>
+          <div className="cols col-50 playlistComponent">
+            <Filter onTextChange={text=>this.setState({filterString:text})}/>
+            <div className="playlist-Info">
+              <Aggregate playlists={playlistsToRender}/>
+              <TimeCounter playlists={playlistsToRender}/>          
+            </div>
+            <div className="playlistsContent">
+            {        
+            playlistsToRender.map(playlist=>
+              <PlaylistItem key={playlist.name} info={playlist}/>            
+            )
+            }  
+            </div>
+          </div>                        
         </div> : <h3 style={{color:'white'}}>Loading...</h3>
       }
       </div>    

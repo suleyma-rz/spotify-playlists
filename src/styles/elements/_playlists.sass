@@ -1,12 +1,35 @@
 @import ../general/color-palette
 
 .playlist
-    
-    &Item
-        width: 25%
-        display: inline-block
-        color: $white
 
-    &Image
-        width: 20%
+    &-Item
+        width: 100%
+        display: flex
+        color: $white
+        padding: 15px 20px
+
+    &-Image
+        width: 100%
         height: auto
+    
+    &-Info
+        padding: 0 20px
+    
+    &-Songs
+        font-size: 0.75rem
+        line-height: 1.5
+        margin: 0.5rem
+
+    &-Info 
+        color: white
+        display: inline-flex
+        font-size: 0.85rem
+
+
+.filterComponent
+    input
+        margin: 0 auto
+        display: block
+        width: 92.5%
+        font-size: 1.5rem
+        letter-spacing: 1px
