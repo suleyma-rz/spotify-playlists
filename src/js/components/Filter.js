@@ -8,8 +8,8 @@ class Filter extends Component{
     render(){
         return(
             <div className="filterComponent">
-                <input type="text" onKeyUp={event =>this.props.onTextChange(event.target.value)}/>
-                <button>Search</button>
+                <input type="text" placeholder="Search..." onKeyUp={event =>this.props.onTextChange(event.target.value)}/>
+                <button className="btn">Search</button>
             </div>
         )        
     }

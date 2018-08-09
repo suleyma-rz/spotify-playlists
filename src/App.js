@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+//import './App.css';
+import './styles/app.sass';
 
 import Aggregate from './js/components/Aggregate';
 import TimeCounter from './js/components/TimeCounter';
