@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './assets/Spotify_Logo_RGB_White.png';
 //import './App.css';
 import './styles/app.sass';
 
@@ -91,45 +91,60 @@ class App extends Component {
                 }],
             }
           ]
-        }             
+        }
       }
     }
-  }  
+  }
   render() {
     let playlistsToRender = this.state.serverDataSample.user ? this.state.serverDataSample.user.playlists.filter(playlist=>
       playlist.name.toLowerCase().includes(this.state.filterString.toLowerCase())
     ) : [];
     return (
-      <div className="App">            
+      <div className="App">
       { this.state.serverDataSample.user ?
         <div>
-          <h1 style={{color:'white'}}>
-            {this.state.serverDataSample.user.name}'s Playlists
-          </h1>                                     
-
-          <div>
-
-          </div>
-          <div className="cols col-50">
-            <InputComponent/>
-          </div>
-          <div className="cols col-50 playlistComponent">
-            <Filter onTextChange={text=>this.setState({filterString:text})}/>
-            <div className="playlist-Info">
-              <Aggregate playlists={playlistsToRender}/>
-              <TimeCounter playlists={playlistsToRender}/>          
+          <nav className="menu-top">
+              <div className="col-20">
+                  <img src={logo} alt="Spotify Logo" className="logo" />
+              </div>
+              <ul className="menu-top-options">
+                <li className="menu-top-option">
+                    <a className="menu-top-option-active" href="#">Add</a>
+                </li>
+                <li className="menu-top-option">
+                    <a href="#">Manage</a>
+                </li>
+                <li className="menu-top-option">
+                    <a href="#">Remove</a>
+                </li>
+                <li><button className="btn">Log Out</button></li>
+              </ul>
+          </nav>
+            <div>
+                <h1 style={{color:'white'}}>
+                    {this.state.serverDataSample.user.name}'s Playlists
+                </h1>
+                <div className="cols col-50">
+                    <InputComponent/>
+                </div>
+                <div className="cols col-50 playlistComponent">
+                    <Filter onTextChange={text=>this.setState({filterString:text})}/>
+                    <div className="playlist-Info">
+                        <Aggregate playlists={playlistsToRender}/>
+                        <TimeCounter playlists={playlistsToRender}/>
+                    </div>
+                    <div className="playlistsContent">
+                        {
+                            playlistsToRender.map(playlist=>
+                                <PlaylistItem key={playlist.name} info={playlist}/>
+                            )
+                        }
+                    </div>
+                </div>
             </div>
-            <div className="playlistsContent">
-            {        
-            playlistsToRender.map(playlist=>
-              <PlaylistItem key={playlist.name} info={playlist}/>            
-            )
-            }  
-            </div>
-          </div>                        
         </div> : <h3 style={{color:'white'}}>Loading...</h3>
       }
-      </div>    
+      </div>
     );
   }
 }

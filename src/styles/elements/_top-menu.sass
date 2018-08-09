@@ -1,0 +1,33 @@
+@import ../general/color-palette
+
+.menu-top
+  background: $black
+  color: $white
+  width: 100%
+  padding: 0 5%
+  display: flex
+  align-items: center;
+
+  img
+    &.logo
+      width: 75%
+      margin: 12px 0
+      display: block
+
+  ul
+    width: 70%
+    display: flex
+    justify-content: flex-end
+    align-content: baseline
+
+  &-option
+    flex-grow: 0.1
+    align-items: center
+    display: flex
+    a
+      padding: 10px 20px
+      &:hover
+        color: $green-main
+
+    &-active
+      border-bottom: 2px solid $green-main
