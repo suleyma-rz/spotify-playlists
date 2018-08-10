@@ -11,14 +11,14 @@ class PlaylistItem extends Component{
                     <h3>{this.props.info.name}</h3>
                     <ul className="playlist-Songs">
                         {this.props.info.songs.map(song=>
-                            <li key={song.title}>{song.title} - {song.artist}</li>
+                            <li key={song.idsong}>{song.title} - {song.artist}</li>
                         )
                         }                    
                     </ul>
                 </div>
                 <div className="cols col-15 form-checkbox">
-                    <input type="checkbox" id="checkbox-{this.props.info.name}"/>                    
-                    <label for="checkbox-{this.props.info.name}"></label>
+                    <input type="checkbox" id={"checkbox-"+this.props.info.idplaylist}/>
+                    <label for={"checkbox-"+this.props.info.idplaylist}></label>
                 </div>
             </div>
         );

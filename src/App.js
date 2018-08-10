@@ -18,32 +18,40 @@ class App extends Component {
         user:{
           name:"Suleyma",
           playlists:[
-            { name: "Rock",
+            {
+                idplaylist:"123",
+                name: "Rock",
               songs: [
                 {
+                    idsong:"1",
                   title:  "Beat it",
                   artist: "Michael Jackson",
                   duration: 305
                 },
                 {
+                    idsong:"2",
                   title:  "Bohemian Rhaphsody",
                   artist: "Queen",
                   duration: 400
                 },
                 {
+                    idsong:"3",
                   title:  "Always",
                   artist: "Bon Jovi",
                   duration: 305
                 }],
             },
-            { name: "Sad songs",
+            { idplaylist:"124",
+                name: "Sad songs",
               songs: [
                 {
+                    idsong:"4",
                   title:  "Fix you",
                   artist: "Coldplay",
                   duration: 450
                 },
                 {
+                    idsong:"5",
                   title:  "I'm with you",
                   artist: "Avril Lavigne",
                   duration: 295
@@ -54,37 +62,45 @@ class App extends Component {
                   duration: 279
                 }],
             },
-            { name: "Same songs",
+            { idplaylist:"125",
+                name: "Same songs",
               songs: [
                 {
+                    idsong:"6",
                   title:  "Beat it",
                   artist: "Michael Jackson",
                   duration: 305
                 },
                 {
+                    idsong:"7",
                   title:  "Beat it",
                   artist: "Michael Jackson",
                   duration: 305
                 },
                 {
+                    idsong:"8",
                   title:  "Beat it",
                   artist: "Michael Jackson",
                   duration: 305
                 }],
             },
-            { name: "Party songs",
+            { idplaylist:"126",
+                name: "Party songs",
               songs: [
                 {
+                    idsong:"9",
                   title:  "Beat it",
                   artist: "Michael Jackson",
                   duration: 305
                 },
                 {
+                    idsong:"8",
                   title:  "Beat it",
                   artist: "Michael Jackson",
                   duration: 305
                 },
                 {
+                    idsong:"9",
                   title:  "Beat it",
                   artist: "Michael Jackson",
                   duration: 305
