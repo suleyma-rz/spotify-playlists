@@ -1,0 +1,53 @@
+@import ../general/color-palette
+body
+.notification
+    &-shown
+      display: block
+
+    &-modal
+        width: 100%
+        height: 100%
+        position: fixed
+        top: 0
+        left: 0
+        display: block
+        background: $blackish
+
+    &-container
+        width: 100%
+        height: 100%
+        position: relative
+
+    &-content
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        border-radius: 20px
+        background: $gray-dark
+        padding: 2rem
+        text-align: center
+
+        &-sm
+            width: 40%
+        
+        &-md
+            width: 60%
+        
+        &-lg
+            width: 80%
+                
+        &-header
+          line-height: 1.5
+          font-weight: bold
+          text-transform: uppercase
+          letter-spacing: 2px
+          padding: 0.25rem 0
+          border-bottom: 1.5px solid $gray-lighter
+        &-body
+          font-size: 0.9rem
+          line-height: 1.5
+          padding: 1.5rem 0
+          border-bottom: 1.5px solid $gray-lighter
+          p
+            margin: 0.75rem
