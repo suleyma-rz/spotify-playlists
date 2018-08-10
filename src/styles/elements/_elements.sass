@@ -1,23 +1,31 @@
 @import ../general/color-palette
 
+@mixin transition($transition...)
+  -moz-transition: $transition
+  -o-transition: $transition
+  -webkit-transition: $transition
+  transition: $transition
+
 .btn
     color: $white
-    font-weight: bold
+    font-weight: normal
     padding: 0.5rem 1rem
     background-color: $green-main
     border: 2px solid $green-main
     border-radius: 40px    
     letter-spacing: 1.5px
 
-input
-    padding: 0.5rem
-    background-color: $blackish
-    border: 2px solid $gray-dark   
-    color: $white-medium
+    &-full-width
+      width: 100%
+
+    @include transition(all 0.2s ease-in-out 0s)
+
+    &:hover
+      background: $green-darker
+      border-color: $green-darker
 
 
 $checkbox-width:      22px
-
 input[type=checkbox]
   position: absolute
   left: -9999px
@@ -37,9 +45,8 @@ input[type=checkbox]
       left: 0
       top: 50%      
       width: $checkbox-width
-      height: $checkbox-width      
-      background-image: url(../assets/checkbox-unchecked.png)
-      background-repeat: no-repeat
+      height: $checkbox-width
+      background-image: url('../assets/checkbox-unchecked.png')
       background-size: cover
       transform: translate(0%,-50%)
       //@include background-size(72px)
@@ -63,6 +70,6 @@ input[type=checkbox]
   &:checked + label
     &:before
       //background-position: -$checkbox-width 0
-      background-image: url(../assets/checkbox-checked.png)
+      background-image: url("../assets/checkbox-checked.png")
       background-repeat: no-repeat
     

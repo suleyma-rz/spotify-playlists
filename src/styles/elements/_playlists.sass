@@ -1,12 +1,17 @@
 @import ../general/color-palette
+.playlistsContent
+    max-height: 250px
+    overflow: auto
+    margin-bottom: 57px
 
 .playlist
-
     &-Item
         width: 100%
         display: flex
+        align-items: center
         color: $white
         padding: 15px 20px
+        border-bottom: 1px solid $gray-light
 
     &-Image
         width: 100%
@@ -30,6 +35,6 @@
     input
         margin: 0 auto
         display: block
-        width: 92.5%
+        width: 100%
         font-size: 1.5rem
         letter-spacing: 1px

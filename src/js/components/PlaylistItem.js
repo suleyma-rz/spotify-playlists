@@ -4,10 +4,10 @@ class PlaylistItem extends Component{
     render(){
         return(
             <div className="playlist-Item">
-                <div className="cols col-15">
+                <div className="cols col-10">
                     <img className="playlist-Image circle-preview" src="https://hmrock.com.br/wp-content/uploads/2016/09/004972672_500.jpg"/>
                 </div>
-                <div className="cols col-70 playlist-Info">
+                <div className="cols col-75 playlist-Info">
                     <h3>{this.props.info.name}</h3>
                     <ul className="playlist-Songs">
                         {this.props.info.songs.map(song=>

@@ -133,22 +133,25 @@ class App extends Component {
                 <li className="menu-top-option">
                     <a href="#">Remove</a>
                 </li>
+                  <li className="menu-top-option">
+                      <a href="#">Game</a>
+                  </li>
                 <li><button className="btn">Log Out</button></li>
               </ul>
           </nav>
-            <div>
-                <h1 style={{color:'white'}}>
-                    {this.state.serverDataSample.user.name}'s Playlists
-                </h1>
-                <div className="cols col-50">
+            <div className="wrapper">
+                <div className="cols col-50 padding-right-10">
+                    <p className="first-title">
+                        Songs to add
+                    </p>
                     <InputComponent/>
                 </div>
+                <div className="cols col-50 playlistComponent"></div>
                 <div className="cols col-50 playlistComponent">
+                    <p className="first-title">
+                        {this.state.serverDataSample.user.name}'s Playlists
+                    </p>
                     <Filter onTextChange={text=>this.setState({filterString:text})}/>
-                    <div className="playlist-Info">
-                        <Aggregate playlists={playlistsToRender}/>
-                        <TimeCounter playlists={playlistsToRender}/>
-                    </div>
                     <div className="playlistsContent">
                         {
                             playlistsToRender.map(playlist=>
@@ -156,6 +159,7 @@ class App extends Component {
                             )
                         }
                     </div>
+                    <button className="btn btn-full-width">Add songs</button>
                 </div>
             </div>
         </div> : <h3 style={{color:'white'}}>Loading...</h3>

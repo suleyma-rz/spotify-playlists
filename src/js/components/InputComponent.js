@@ -6,10 +6,10 @@ class InputComponent extends Component {
   }  
   render() {    
     return (
-        <div className="inputComponent">      
+        <div className="inputComponent center-text">
             <textarea placeholder="Song Artist..."/>
-            <p> or </p>
-            <button className="btn">Upload file</button>
+            <p className="ornament-center center-text"> or </p>
+            <button className="btn btn-full-width">Upload file</button>
         </div>
     )}
 }
