@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a7fa80cd-a347-4a00-a9af-57438c5d0f66" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/InputComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/InputComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/PlaylistItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/PlaylistItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/app.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/app.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/elements/_elements.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/elements/_elements.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/elements/_playlists.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/elements/_playlists.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/elements/_top-menu.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/elements/_top-menu.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/general/_color-palette.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/general/_color-palette.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/general/global.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/general/global.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/general/responsive_grid.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/general/responsive_grid.sass" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -277,24 +266,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533849399114</updated>
-      <workItem from="1533849404966" duration="13938000" />
+      <workItem from="1533849404966" duration="14601000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13938000" />
+    <option name="totallyTimeSpent" value="14601000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20111288" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20111288" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" weight="0.40569395" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.40569395" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
