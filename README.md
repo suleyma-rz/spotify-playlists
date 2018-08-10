@@ -4,7 +4,7 @@ Currently in progress...
 
 ## Objectives
 
-Create an app that lets you manage your playlists on Spotify. I'm working on this project trying to achieve the following functionlaities:
+Create an app that lets you manage your playlists on Spotify. I'm working on this project trying to achieve the following functionalities:
 
 * `Search and add` multiple songs to multiple playlists by text or txt file.
 * `Move songs` between playlists.
