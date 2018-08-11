@@ -116,31 +116,31 @@ class App extends Component {
     super(props);
     this.state={
       filterString:"",
-      //serverDataSample: data
+      serverDataSample: null
     }
   }
 
   componentDidMount(){
       let parsed = querystring.parse(window.location.search);
       let accessToken=parsed.access_token;
-
-      //Get the user info
-      fetch('https://api.spotify.com/v1/me',{
-          headers:{'Authorization': 'Bearer ' + accessToken}
-      }).then((response) => response.json()).then((data) => {
-          this.setState({serverDataSample:{user:{name:( data.display_name && data.display_name!==null )? data.display_name : data.id}}});
-          return true;
-      });
-
-      //Get the user playlists
-      fetch('https://api.spotify.com/v1/me/playlists',{
-          headers:{'Authorization': 'Bearer ' + accessToken}
-      }).then((response) => response.json()).then((data) => {
-          let currentData =this.state.serverDataSample;
-          currentData.playlists=data.items;
-          this.setState({serverDataSample:currentData});
-          console.log(data);
-      });
+        if(accessToken && accessToken!==null){
+            //Get the user info
+            fetch('https://api.spotify.com/v1/me',{
+                headers:{'Authorization': 'Bearer ' + accessToken}
+            }).then((response) => response.json()).then((data) => {
+                this.setState({serverDataSample:{user:{name:( data.display_name && data.display_name!==null )? data.display_name : data.id}}});
+                return true;
+            });
+            //Get the user playlists
+            fetch('https://api.spotify.com/v1/me/playlists',{
+                headers:{'Authorization': 'Bearer ' + accessToken}
+            }).then((response) => response.json()).then((data) => {
+                let currentData =this.state.serverDataSample;
+                currentData.playlists=data.items;
+                this.setState({serverDataSample:currentData});
+                console.log(data);
+            });
+        }
   }
 
   render(){
@@ -204,7 +204,10 @@ class App extends Component {
         </div> :
         <Notification title="Sign in" className="notification-content-sm">
           <p>Oops! It look like you're not signed in :C </p>
-          <button className="btn" onClick={() => window.location = 'http://localhost:8888/login'}> Sign in with Spotify</button>
+          <button className="btn" onClick={() => window.location =
+              window.location.href.includes('localhost')
+                  ? 'http://localhost:8888/login'
+                  : 'https://spotify-play-lists-backend.herokuapp.com/login' }> Sign in with Spotify</button>
         </Notification>                
       }
       </div>
