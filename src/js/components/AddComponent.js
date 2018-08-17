@@ -3,6 +3,7 @@ import InputComponent from './InputComponent';
 import Filter from './Filter';
 import PlaylistItem from './PlaylistItem';
 import querystring from 'query-string'
+import Notification from './Notification'
 
 import {Checkbox,CheckboxGroup} from 'react-checkbox-group'
 
@@ -82,8 +83,7 @@ class AddComponent extends Component {
     }
 
 
-    handleChange(e){
-        console.log(e);        
+    handleChange(e){        
         const item = e.target.name;
         const isChecked = e.target.checked;
         this.setState(prevState => ({ checkedPlaylists: prevState.checkedPlaylists.set(item, isChecked) }));
@@ -103,8 +103,8 @@ class AddComponent extends Component {
             }).catch(err => console.log('There was an error:' + err));
         });
 
-        Promise.all(playlistsPromises).then( () =>{            
-            alert("Playlists updated!");
+        Promise.all(playlistsPromises).then( () =>{                        
+            alert("Playlists updated");
         });
         return true;
     }
@@ -115,7 +115,7 @@ class AddComponent extends Component {
         ) : [];        
         return (
             <div className="AddComponent">
-                { this.state.serverDataSample && this.state.serverDataSample !==null ?
+                {  this.state.serverDataSample && this.state.serverDataSample !==null ?
                     <div>
                         <div className="wrapper">
                             <div className="cols col-50 padding-right-10">
@@ -156,6 +156,7 @@ class AddComponent extends Component {
                         </div>
                     </div>:
                     <div></div>
+                    
                 }
             </div>
         );

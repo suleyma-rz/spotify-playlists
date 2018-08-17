@@ -7,7 +7,7 @@ class InputComponent extends Component {
   constructor(props){
     super(props);
     this.state = {
-        value: 'Song & Artist...',
+        value: '',
         loading: false
     };
     this.handleChange = this.handleChange.bind(this);
@@ -16,21 +16,7 @@ class InputComponent extends Component {
 
   componentDidMount(){
       let parsed = querystring.parse(window.location.search);
-      accessToken=parsed.access_token;
-      //SAVE SONGS IN PREDEFINED PLAYLIST
-      /*let params=[
-        "spotify:track:7BqBn9nzAq8spo5e7cZ0dJ",
-        "spotify:track:3AJwUDP919kvQ9QcozQPxg",
-        "spotify:track:6kPJZM97LwdG9QIsT7khp6"
-      ];
-      console.log('https://api.spotify.com/v1/playlists/1Gy6j9o8siJG7OTi7HFRj8/tracks?uris=' + params.join(','));
-      fetch('https://api.spotify.com/v1/playlists/1Gy6j9o8siJG7OTi7HFRj8/tracks?uris=' + params.join(','), {
-          method: 'POST',
-          headers: {'Authorization': 'Bearer ' + accessToken, 'Accept': 'application/json'}
-      }).then((response) => response.json()).then((data) => {
-          console.log("Fin de promise");
-          console.log(data);
-      }).catch(err => console.log('There was an error:' + err));*/
+      accessToken=parsed.access_token;      
   }
   handleChange(event) {
     this.setState({value: event.target.value});
@@ -56,10 +42,7 @@ class InputComponent extends Component {
           params.q=songSearch;
           promises[index]=fetch('https://api.spotify.com/v1/search?' + querystring.stringify(params), {
               headers: {'Authorization': 'Bearer ' + accessToken}
-          }).then((response) => response.json()).then((data) => {
-              //tracks[index]=data;
-              //song = data.tracks.items[0];
-              //songObj = data.tracks.items[0];
+          }).then((response) => response.json()).then((data) => {              
               tracks[index]=data.tracks.items[0];
               return true;
           }).catch(err => {
@@ -78,17 +61,15 @@ class InputComponent extends Component {
     return (
         <div className="inputComponent center-text">
             <form onSubmit={this.handleSubmit}>
-                <textarea placeholder="Song Artist..." value={this.state.value} onChange={this.handleChange}/>
-                <button className="btn btn-full-width" type="submit">Search</button>
-                <p className="ornament-center center-text"> or </p>
-                <button className="btn btn-full-width">Upload file</button>
+                <textarea placeholder="Song and Artist..." value={this.state.value} onChange={this.handleChange}/>
+                <button className="btn btn-full-width" type="submit">Search</button>                
             </form>
             {this.state.loading ?
                 <p>Loading...</p> :
                 <p></p>
             }
             <div>
-                {this.state.response?
+                {this.state.response && this.state.response!==null?
                     <div>
                         <div className="songsContent">
                             {
@@ -97,7 +78,8 @@ class InputComponent extends Component {
                                 )
                             }
                         </div>
-                    </div> : <div><p className="ornament-center">No songs found</p></div>
+                    </div> :
+                     <div></div>
                 }
             </div>
         </div>

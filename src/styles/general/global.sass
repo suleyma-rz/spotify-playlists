@@ -12,7 +12,8 @@ body
   font-family: 'Roboto', sans-serif
   background-color: $gray-dark
   max-width: 1200px
-  overflow: hidden
+  overflow-x: hidden
+  overflow-y: auto
 
   *
     box-sizing: border-box
@@ -39,6 +40,18 @@ textarea
   height: 250px
   font-family: inherit
 
+#root
+  width: 100vw
+  height: 100%
+  display: block
+
+.App
+  height: 100%
+
+.sectionBody  
+  width: 100vw
+  min-height: 100vh
+  height: 100%
 .wrapper
   padding: 2.5% 5%
 

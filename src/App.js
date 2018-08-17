@@ -63,11 +63,17 @@ class App extends Component {
                     <li><button className="btn">Log Out</button></li>
                   </ul>
               </nav>
+              <div className="sectionBody">
                 <AddComponent/>
+              </div>              
             </div> :
             <Notification title="Sign in" className="notification-content-sm">
                 <p>Oops! It look like you're not signed in :C </p>
-                <button className="btn" onClick={() => window.location =
+                {window.location.href.includes('localhost')
+                    ? <p>'http://localhost:8888/login'</p>
+                    : <p>'https://spotify-play-lists-backend.herokuapp.com/login'</p>
+                }
+                <button className="btn" onClick={() => window.location =                    
                     window.location.href.includes('localhost')
                         ? 'http://localhost:8888/login'
                         : 'https://spotify-play-lists-backend.herokuapp.com/login' }> Sign in with Spotify</button>

@@ -10,10 +10,10 @@ class SongItem extends Component{
         let artist = this.props.info.artists[0].name;
         return(
             <div className="playlist-Item">
-                <div className="cols col-25">
+                <div className="cols col-10">
                     <img className="playlist-Image circle-preview" src={img} alt={album}/>
                 </div>
-                <div className="cols col-75 playlist-Info">
+                <div className="cols col-90 playlist-Info">
                     <p className="cols col-50">{name}</p>
                     <p className="cols col-25">{artist}</p>
                     <p className="cols col-25">{album}</p>
