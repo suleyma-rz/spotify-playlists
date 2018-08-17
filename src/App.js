@@ -27,14 +27,14 @@ class App extends Component {
                 return true;
             });
             //Get the user playlists
-            fetch('https://api.spotify.com/v1/me/playlists',{
+            /*fetch('https://api.spotify.com/v1/me/playlists?limit=50',{
                 headers:{'Authorization': 'Bearer ' + accessToken}
             }).then((response) => response.json())
                 .then((data) => {
                 let currentData =this.state.serverDataSample;
                 currentData.playlists=data.items;
                 this.setState({serverDataSample:currentData});
-            });
+            });*/
         }
   }
 

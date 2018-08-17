@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
 
 class PlaylistItem extends Component{
+    constructor(props){
+        super(props);         
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e){
+        this.props.handler(e);
+    }
     render(){
         return(
             <div className="playlist-Item">
@@ -16,8 +24,8 @@ class PlaylistItem extends Component{
                         */}
                     </ul>
                 </div>
-                <div className="cols col-10 form-checkbox">
-                    <input type="checkbox" id={"checkbox-"+this.props.info.id} value={this.props.info.id} name="set-of-playlists"/>
+                <div className="cols col-10 form-checkbox">                 
+                    <input type="checkbox" id={"checkbox-"+this.props.info.id} value={this.props.info.id} name={this.props.name} onChange={this.handleChange}/>
                     <label htmlFor={"checkbox-"+this.props.info.id}></label>
                 </div>
             </div>
