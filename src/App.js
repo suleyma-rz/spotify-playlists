@@ -5,21 +5,28 @@ import './styles/app.sass';
 import NavMenu from './js/components/NavMenu';
 import Notification from './js/components/Notification';
 
+import UserInfo from './js/components/UserInfo';
+
 import AddComponent from './js/components/AddComponent';
 import querystring from 'query-string'
+import AddSection from "./js/components/AddSection";
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
             filterString: "",
-            serverDataSample: null
+            serverDataSample: null,
+            accessToken: ""
         }
     }
 
     componentDidMount() {
         let parsed = querystring.parse(window.location.search);
         let accessToken = parsed.access_token;
+
+        let user = new UserInfo(accessToken);
+
         if (accessToken && accessToken !== null) {
             //Get the user info
             fetch('https://api.spotify.com/v1/me', {
@@ -47,7 +54,8 @@ class App extends Component {
                     <div>
                         <NavMenu/>
                         <div className="sectionBody">
-                            <AddComponent/>
+                            {/*<AddComponent/>*/}
+                            <AddSection/>
                         </div>
                     </div>
                     :
